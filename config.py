@@ -19,4 +19,4 @@ print("--- Koniec debug config.py ---")
 
 BOT_TOKEN = bot_token_value_from_env # To jest to, co było wcześniej
 FFMPEG_EXECUTABLE = ffmpeg_path_from_env # To jest to, co było wcześniej
-DEFAULT_PREFIX = "!"
+DEFAULT_PREFIX = "&"
