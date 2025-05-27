@@ -1,0 +1,4 @@
+disnake
+yt-dlp
+python-dotenv  # Do łatwego wczytywania zmiennych z pliku .env
+PyNaCl         # Do obsługi głosu, często wymagane przez disnake[voice]

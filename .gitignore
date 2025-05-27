@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+ENV/
+.venv/
+
+# Plik konfiguracyjny z tokenem
+.env
+
+# Pliki IDE
+.vscode/
+.idea/
+
+# Pliki systemowe
+.DS_Store
+Thumbs.db
