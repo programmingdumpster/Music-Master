@@ -29,8 +29,8 @@ def load_cogs():
                 print(f'Nie udało się załadować coga {filename[:-3]}: [{type(e).__name__}] {e}')
 
 if __name__ == '__main__':
-    if  bot.run(bot.config.BOT_TOKEN):
-        load_cogs()
-        bot.run(bot.config.BOT_TOKEN)
+    if bot.config.BOT_TOKEN:  # Najpierw sprawdź, czy token w ogóle istnieje
+        load_cogs()           # Załaduj cogi PRZED uruchomieniem bota
+        bot.run(bot.config.BOT_TOKEN) # Uruchom bota (tylko raz)
     else:
         print("BŁĄD: Token bota nie został znaleziony. Upewnij się, że ustawiłeś DISCORD_BOT_TOKEN w pliku .env")
