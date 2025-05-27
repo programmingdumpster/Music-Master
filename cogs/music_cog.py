@@ -18,12 +18,14 @@ class MusicCog(commands.Cog, name="Muzyka"):
             'before_options': '-reconnect 1 -reconnect_streamed 1 -reconnect_delay_max 5',
             'options': '-vn -loglevel quiet'  # -vn = no video, -loglevel quiet = mniej logów z ffmpeg
         }
+        # w pliku cogs/music_cog.py, w metodzie __init__ klasy MusicCog
         self.ydl_options = {
-            'format': 'bestaudio/best',  # Pobierz najlepsze dostępne audio
-            'noplaylist': True,  # Jeśli link to wideo z playlisty, pobierz tylko to wideo
-            'quiet': True,  # Mniej logów z yt-dlp
-            'default_search': 'auto',  # Wyszukaj jeśli to nie URL
-            'source_address': '0.0.0.0'  # Może pomóc na niektórych VPSach (problemy z IPv6)
+            'format': 'bestaudio/best',
+            'noplaylist': True,
+            'quiet': True,
+            'default_search': 'auto',
+            'source_address': '0.0.0.0',  # To już masz, jest OK
+            'cookiefile': 'cookies.txt'  # <-- DODAJ TĘ LINIĘ
         }
 
     async def _ensure_voice_client(self, ctx: commands.Context):
