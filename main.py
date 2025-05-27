@@ -4,13 +4,14 @@ import os
 import config
 # Ustawienie uprawnień (Intents) - ważne dla funkcji bota
 intents = disnake.Intents.default()
-intents.message_content = True # Jeśli chcesz używać komend z prefiksem i czytać treść wiadomości
-intents.voice_states = True    # Niezbędne dla bota muzycznego do śledzenia stanu kanałów głosowych
+intents.message_content = True # KLUCZOWE DLA KOMEND Z PREFIKSEM
+intents.voice_states = True    # Dla funkcji głosowych
 
 # Możesz użyć `commands.Bot` dla tradycyjnych komend i slash,
 # lub `disnake.InteractionBot` jeśli chcesz tylko komendy slash.
-bot = commands.Bot(command_prefix="!", intents=intents) # Możesz zmienić prefix
+bot = commands.Bot(command_prefix=config.DEFAULT_PREFIX, intents=intents)
 bot.config = config
+
 
 @bot.event
 async def on_ready():
